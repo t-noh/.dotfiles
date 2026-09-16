@@ -30,6 +30,12 @@
       url = "github:sadjow/codex-cli-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Firefox user.js baseline, read by users/common/firefox.nix.
+    # Bump with `nix flake update betterfox`.
+    betterfox = {
+      url = "github:yokoffing/Betterfox";
+      flake = false;
+    };
   };
 
   outputs = { self, nixpkgs, darwin, home-manager, disko, ... }@inputs:

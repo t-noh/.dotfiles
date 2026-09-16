@@ -4,6 +4,8 @@ let
   dotfiles = "${config.home.homeDirectory}/.dotfiles";
 in
 {
+  imports = [ ./firefox.nix ];
+
   home = {
     stateVersion = "26.05";
     packages = pkgs.callPackage ./packages.nix {};
@@ -222,14 +224,5 @@ in
   programs.zellij = {
     enable = true;
   };
-
-  # Issues: not supported in aarch64-darwin
-  # programs.firefox = {
-  #   enable = true;
-  #   extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-  #     https-everywhere
-  #     privacy-badger
-  #   ];
-  # };
 
 }
