@@ -27,6 +27,12 @@ in
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
           installation_mode = "force_installed";
         };
+        # Vim keys. Its own settings (e.g. excluding docs.google.com) live in
+        # the extension's storage, not here.
+        "vimium-c@gdh1995.cn" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/vimium-c/latest.xpi";
+          installation_mode = "force_installed";
+        };
       };
     };
 
@@ -60,6 +66,13 @@ in
         "sidebar.verticalTabs" = true;
         "browser.download.always_ask_before_handling_new_types" = false;
         "layout.word_select.eat_space_to_next_word" = false;
+
+        # --- Keyboard ---
+        "browser.tabs.closeWindowWithLastTab" = false;
+        "browser.ctrlTab.sortByRecentlyUsed" = true;
+        "browser.tabs.insertAfterCurrent" = true;
+        "browser.link.open_newwindow.restriction" = 0;
+        "accessibility.typeaheadfind.enablesound" = false;
 
         # --- Betterfox overrides ---
         # "browser.search.suggest.enabled" = true;        # Google completions in the url bar
